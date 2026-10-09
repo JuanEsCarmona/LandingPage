@@ -1,9 +1,7 @@
 /* From Uiverse.io by gharsh11032000 */ 
 .form-container {
   width: 400px;
-  background: linear-gradient(#212121, #212121) padding-box,
-              linear-gradient(145deg, transparent 35%,#e81cff, #40c9ff) border-box;
-  border: 2px solid transparent;
+  background: linear-gradient(#212121, #212121);
   padding: 32px 24px;
   font-size: 14px;
   font-family: inherit;
@@ -13,10 +11,6 @@
   gap: 20px;
   box-sizing: border-box;
   border-radius: 16px;
-}
-
-.form-container button:active {
-  scale: 0.95;
 }
 
 .form-container .form {
@@ -61,20 +55,6 @@
   font-family: inherit;
 }
 
-.form-container .form-group input::placeholder {
-  opacity: 0.5;
-}
-
-.form-container .form-group input:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
-.form-container .form-group textarea:focus {
-  outline: none;
-  border-color: #e81cff;
-}
-
 .form-container .form-submit-btn {
   display: flex;
   align-items: flex-start;
@@ -92,11 +72,6 @@
   margin-top: 8px;
   cursor: pointer;
   border-radius: 6px;
-}
-
-.form-container .form-submit-btn:hover {
-  background-color: #fff;
-  border-color: #fff;
 }
 
 

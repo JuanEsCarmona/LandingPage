@@ -8,28 +8,18 @@ function CardProject() {
   return (
     <>
       <div className="cardProject">
-        <div className="tools">
-          <div className="circle">
-            <span className="red box"></span>
-          </div>
-          <div className="circle">
-            <span className="yellow box"></span>
-          </div>
-          <div className="circle">
-            <span className="green box"></span>
-          </div>
-        </div>
         {/* IMAGEN DEL HEADER */}
-        <div className="card__header">
+        <figure className="cardHeader">
             <img src={ImgEjemplo} alt="Inicio de Sesión en SweetSol" />
-        </div>
+            <figcaption className="cardCaption">Inicio de Sesión en SweetSol</figcaption>
+        </figure>
         {/* NOMBRE DEL PROYECTO */}
-        <div className="card__content">
-          <h3 className="card__title">SweetSol Mantenimiento</h3>
-          <p className="card__description">Plataforma de gestión de mantenimiento para SweetSol.</p>
+        <div className="cardContent">
+          <h3 className="cardTitle">SweetSol Mantenimiento</h3>
+          <p className="cardDescription">Plataforma de gestión de mantenimiento para SweetSol.</p>
         </div>
         {/* LENGUAJES USADOS EN EL PROYECTO */}
-        <div className="card__footer">
+        <div className="cardFooter">
           <div className="languages">
             <span className="language">JavaScript -</span>
             <span className="language"> PHP -</span>
