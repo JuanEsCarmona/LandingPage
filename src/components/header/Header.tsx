@@ -7,7 +7,7 @@ function Header() {
             <header className="header">
                 {/* Header Tittle */}
                 <div className="header-content">
-                    <h1 className="header-title">Welcome to My Website</h1>
+                    <h1 className="header-title">¡Welcome!</h1>
                     <p className="header-subtitle">We provide the best services for you.</p>
                 </div>
                 {/* Header Navigation Buttons */}
@@ -16,6 +16,16 @@ function Header() {
                     <button className="button-ContactForm">    
                         <p className="descriptiontext-ContactForm">
                             Contact Us
+                        </p>
+                    </button>
+                    <button className="button-ContactForm">    
+                        <p className="descriptiontext-ContactForm">
+                            Projects
+                        </p>
+                    </button>
+                    <button className="button-ContactForm">    
+                        <p className="descriptiontext-ContactForm">
+                            Languages and Technologies
                         </p>
                     </button>
                 </div>
