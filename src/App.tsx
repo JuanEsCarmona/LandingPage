@@ -2,7 +2,7 @@
 
 import Header from "./components/header/Header.tsx";
 import Card from "./components/cardLanguages/Card.tsx";
-import CardProject from "./components/cardProjects/CardProjects.tsx";
+import CardProjects from "./components/cardProjects/CardProjects.tsx";
 import ContactForm from "./components/contactForm/ContactForm.tsx";
 
 /* LANDIGN PAGE */
@@ -25,7 +25,7 @@ function App() {
                 utilizando diferentes tecnologías y lenguajes de programación.
               </p>
             </aside>
-            <CardProject />
+            <CardProjects />
           </section>
           <section className="contactForm">
             <ContactForm />
