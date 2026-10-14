@@ -1,5 +1,11 @@
+// IMPORTACIONES DE REACT 
 import { useRef, useState, type UIEvent } from 'react';
-import ImgEjemplo from '../../assets/img/SweetSolMantenimiento.png';
+
+// IMPORTACIONES DE IMAGENES Y ESTILOS
+import ImgSweetsol from '../../assets/img/SweetSolMantenimiento.png';
+import ImgBikeStore from '../../assets/img/ImgBikeStore.png';
+import ImgAiame from '../../assets/img/ImgAiame.png';
+
 import './CardProject.css';
 
 // Define los campos que necesita cada proyecto para mostrarse en una tarjeta.
@@ -17,21 +23,30 @@ interface Project {
 const projects: Project[] = [
   {
     id: 'sweetsol-mantenimiento',
-    image: ImgEjemplo,
+    image: ImgSweetsol,
     imageAlt: 'Inicio de sesión en SweetSol',
     imageCaption: 'Inicio de sesión en SweetSol',
     title: 'SweetSol Mantenimiento',
     description: 'Plataforma de gestión de mantenimiento para SweetSol.',
-    technologies: ['JavaScript', 'PHP', 'React'],
+    technologies: ['JavaScript', 'PHP', 'React', 'SQL Server', 'Docker'],
   },
   {
-    id: 'sweetsol-mantenimiento',
-    image: ImgEjemplo,
-    imageAlt: 'Inicio de sesión en SweetSol',
-    imageCaption: 'Inicio de sesión en SweetSol',
-    title: 'SweetSol Mantenimiento',
-    description: 'Plataforma de gestión de mantenimiento para SweetSol.',
-    technologies: ['JavaScript', 'PHP', 'React'],
+    id: 'bikestore',
+    image: ImgBikeStore,
+    imageAlt: 'Pagina principal de BikeStore',
+    imageCaption: 'Pagina principal de BikeStore',
+    title: 'BikeStore',
+    description: 'Simulación de una tienda de bicicletas con carrito de compras y pasarela de pago.',
+    technologies: ['JavaScript', 'Node.js', 'React', 'PosgreSQL', 'XAMPP'],
+  },
+  {
+    id: 'aiame',
+    image: ImgAiame,
+    imageAlt: 'Inicio de sesión en AIAME',
+    imageCaption: 'Inicio de sesión en AIAME',
+    title: 'AIAME',
+    description: 'Plataforma de gestión de mantenimiento para AIAME.',
+    technologies: ['JavaScript', 'PHP', 'React', 'PhpMyAdmin', 'Dart', 'Flutter',],
   },
 ];
 
