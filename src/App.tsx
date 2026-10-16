@@ -19,9 +19,9 @@ function App() {
           </section>
           <section className="cardProjects">
             <aside className="ProjectsInformation">
-              <h2 className="ProjectsInformation__title">Proyectos</h2>
+              <h2 className="ProjectsInformation__title">Trabajos y Proyectos</h2>
               <p className="ProjectsInformation__description">
-                Estos son algunos de los proyectos que he desarrollado,
+                Estos son algunos de los trabajos y proyectos que he desarrollado,
                 utilizando diferentes tecnologías y lenguajes de programación.
               </p>
             </aside>
