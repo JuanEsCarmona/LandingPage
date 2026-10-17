@@ -6,20 +6,25 @@
 .techStack__title {
   margin: 0 0 24px;
   color: #fff;
-  font-size: 1.75rem;
+  font-size: 2.25rem;
   font-weight: 700;
   line-height: 1.2;
+  justify-self: center;
 }
 
 .techStack__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
-  gap: 14px;
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: start;
+  overflow-x: auto;
+  overflow-x: hidden;
+  gap: 20px
 }
 
 .techStack__item {
   --tech-accent: #f2b544;
-  min-width: 0;
+  min-width: 145px;
   min-height: 150px;
   display: grid;
   place-items: center;
@@ -53,7 +58,7 @@
   border-color: var(--tech-accent);
   background: #3c3838;
   box-shadow: 0 12px 26px rgb(0 0 0 / 22%);
-
+}
 
 .techStack__figure {
   width: 100%;
@@ -81,6 +86,76 @@
   overflow-wrap: anywhere;
 }
 
+/* ESTILOS DEL CARRUSEL */
+
+.projectsCarousel__controls {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin: 16px auto 0;
+  max-width: 450px;
+}
+
+.projectsCarousel__arrow {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgb(255 255 255 / 65%);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.projectsCarousel__arrow:first-child {
+  justify-self: start;
+}
+
+.projectsCarousel__arrow:last-child {
+  justify-self: end;
+}
+
+.projectsCarousel__arrow:disabled {
+  cursor: default;
+  opacity: 0.4;
+}
+
+.projectsCarousel__arrow:focus-visible,
+.projectsCarousel__indicator:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+.projectsCarousel__indicators {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.projectsCarousel__indicator {
+  width: 9px;
+  height: 9px;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(255 255 255 / 55%);
+  cursor: pointer;
+  padding: 0;
+}
+
+.projectsCarousel__indicator.is-active {
+  width: 24px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projectsCarousel__viewport {
+    scroll-behavior: auto;
+  }
+}
+
 @media (max-width: 480px) {
   .techStack__grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -101,5 +176,4 @@
   .techStack__item:hover {
     transform: none;
   }
-}
 }

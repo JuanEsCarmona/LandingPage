@@ -1,5 +1,8 @@
 // Importaciones del componente
 
+// Importaciones de React
+import { useRef, useState, type UIEvent } from "react";
+
 // Importaciones de los SVG
 import JavaScript from "../../assets/img/LogosJavascript.svg";
 import Html5 from "../../assets/img/DeviconHtml5.svg";
@@ -68,9 +71,9 @@ const languages: Languages[] = [
   {
     id: "6",
     img: JavaSpringBoot,
-    imgAlt: "Logo de Java SpringBoot",
-    imgCaption: "Java SpringBoot",
-    name: "Java SpringBoot",
+    imgAlt: "Logo de Java Spring",
+    imgCaption: "Java Spring",
+    name: "Java Spring",
   },
   {
     id: "7",
@@ -124,12 +127,49 @@ const languages: Languages[] = [
 ];
 
 function Card() {
+  // Función que permitirá el scroll horizontal mediante botones
+
+  // Guardar una referencia del DOM visual de la carta para el scroll
+  const viewportRef = useRef<HTMLDivElement>(null);
+  // Guarda la pocisión del elemento visible (Tarjeta/Card); por defecto, lo establecemos en 0
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const handleScroll = (event: UIEvent<HTMLDivElement>) => {
+    // scrollLeft indica cuánto se desplazó el carrusel; al dividirlo por su ancho
+    // obtenemos qué tarjeta está más cerca de quedar visible por completo.
+    const viewport = event.currentTarget;
+    const index = Math.round(viewport.scrollLeft / viewport.clientWidth);
+
+    // Limita el índice al último proyecto para que nunca supere el final de la lista.
+    setActiveIndex(Math.min(index, languages.length - 1));
+  };
+
+  const goToLanguage = (index: number) => {
+    // Desplaza el área una tarjeta por vez: índice multiplicado por el ancho visible.
+    const viewport = viewportRef.current;
+
+    if (viewport) {
+      viewport.scrollTo({ left: index * viewport.clientWidth });
+    }
+  };
+
   return (
-    <div className="techStack">
+    <div
+      className="techStack"
+    >
       <h2 className="techStack__title">Tecnologías</h2>
-      <div className="techStack__grid">
-        {languages.map((language) => (
-          <article key={language.id} className="techStack__item">
+      <div 
+        className="techStack__grid"
+        ref={viewportRef}
+        onScroll={handleScroll}
+        tabIndex={0}
+      >
+        {languages.map((language, index) => (
+          <article 
+            key={language.id} 
+            className="techStack__item"
+            aria-label={`${index + 1} de ${languages.length}: ${language.name}`}
+          >
             <figure className="techStack__figure">
               <img
                 className="techStack__icon"
@@ -144,6 +184,44 @@ function Card() {
           </article>
         ))}
       </div>
+
+      {languages.length > 1 && (
+        <div className="projectsCarousel__controls">
+          <button
+            className="projectsCarousel__arrow"
+            type="button"
+            aria-label="Proyecto anterior"
+            onClick={() => goToLanguage(activeIndex - 1)}
+            disabled={activeIndex === 0}
+          >
+            ‹
+          </button>
+          <div
+            className="projectsCarousel__indicators"
+            aria-label="Seleccionar proyecto"
+          >
+            {languages.map((language, index) => (
+              <button
+                className={`projectsCarousel__indicator${activeIndex === index ? " is-active" : ""}`}
+                key={language.id}
+                type="button"
+                aria-label={`Ir al proyecto ${index + 1}: ${language.name}`}
+                aria-current={activeIndex === index ? "true" : undefined}
+                onClick={() => goToLanguage(index)}
+              />
+            ))}
+          </div>
+          <button
+            className="projectsCarousel__arrow"
+            type="button"
+            aria-label="Proyecto siguiente"
+            onClick={() => goToLanguage(activeIndex + 1)}
+            disabled={activeIndex === languages.length - 1}
+          >
+            ›
+          </button>
+        </div>
+      )}
     </div>
   );
 }
