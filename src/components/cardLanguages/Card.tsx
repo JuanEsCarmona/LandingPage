@@ -133,6 +133,10 @@ function Card() {
   const viewportRef = useRef<HTMLDivElement>(null);
   // Guarda la pocisión del elemento visible (Tarjeta/Card); por defecto, lo establecemos en 0
   const [activeIndex, setActiveIndex] = useState(0);
+  // Cantidad de Cartas que deben aparecer en cada una de las páginas
+  const itemsPerPage = 3;
+  const pageCount = Math.ceil(languages.length / itemsPerPage);
+  // la función quiere decir: (13 / 3) donde 13 es el total de elementos y 3 la cantidad de páginas que queremos
 
   const handleScroll = (event: UIEvent<HTMLDivElement>) => {
     // scrollLeft indica cuánto se desplazó el carrusel; al dividirlo por su ancho
@@ -141,15 +145,15 @@ function Card() {
     const index = Math.round(viewport.scrollLeft / viewport.clientWidth);
 
     // Limita el índice al último proyecto para que nunca supere el final de la lista.
-    setActiveIndex(Math.min(index, languages.length - 1));
+    setActiveIndex(Math.min(index, pageCount - 1));
   };
 
-  const goToLanguage = (index: number) => {
+  const goToLanguage = (pageIndex: number) => {
     // Desplaza el área una tarjeta por vez: índice multiplicado por el ancho visible.
     const viewport = viewportRef.current;
 
     if (viewport) {
-      viewport.scrollTo({ left: index * viewport.clientWidth });
+      viewport.scrollTo({ left: pageIndex * viewport.clientWidth });
     }
   };
 
@@ -190,7 +194,7 @@ function Card() {
           <button
             className="projectsCarousel__arrow"
             type="button"
-            aria-label="Proyecto anterior"
+            aria-label="tecnologia anterior"
             onClick={() => goToLanguage(activeIndex - 1)}
             disabled={activeIndex === 0}
           >
@@ -198,25 +202,25 @@ function Card() {
           </button>
           <div
             className="projectsCarousel__indicators"
-            aria-label="Seleccionar proyecto"
+            aria-label="Seleccionar tecnologia"
           >
-            {languages.map((language, index) => (
+            {Array.from({ length: pageCount }, (_, pageIndex) => (
               <button
-                className={`projectsCarousel__indicator${activeIndex === index ? " is-active" : ""}`}
-                key={language.id}
+                className={`projectsCarousel__indicator${activeIndex === pageIndex ? " is-active" : ""}`}
+                key={pageIndex}
                 type="button"
-                aria-label={`Ir al proyecto ${index + 1}: ${language.name}`}
-                aria-current={activeIndex === index ? "true" : undefined}
-                onClick={() => goToLanguage(index)}
+                aria-label={`Ir a la tecnologia ${pageIndex + 1}:`}
+                aria-current={activeIndex === pageIndex ? "true" : undefined}
+                onClick={() => goToLanguage(pageIndex)}
               />
             ))}
           </div>
           <button
             className="projectsCarousel__arrow"
             type="button"
-            aria-label="Proyecto siguiente"
+            aria-label="Tecnologia siguiente"
             onClick={() => goToLanguage(activeIndex + 1)}
-            disabled={activeIndex === languages.length - 1}
+            disabled={activeIndex === pageCount - 1}
           >
             ›
           </button>

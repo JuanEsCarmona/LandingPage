@@ -18,14 +18,15 @@
   display: flex;
   align-items: start;
   overflow-x: auto;
-  overflow-x: hidden;
   gap: 20px
 }
 
 .techStack__item {
   --tech-accent: #f2b544;
-  min-width: 145px;
-  min-height: 150px;
+  box-sizing: border-box;
+  flex: 0 0 calc((100% - 40px) / 3);
+  min-width: 0;
+  min-height: 190px;
   display: grid;
   place-items: center;
   padding: 18px 12px;
