@@ -3,16 +3,6 @@ import "./Header.css";
 function Header() {
   return (
     <>
-      {/* Header Section */}
-      <header className="header">
-        {/* Header Tittle */}
-        <div className="header-content">
-          <h1 className="header-title">¡Welcome!</h1>
-          <p className="header-subtitle">
-            We provide the best services for you.
-          </p>
-        </div>
-      </header>
       {/* Header Navigation Buttons */}
       <nav className="navigation-buttons">
         {/* Contact Form Button */}
