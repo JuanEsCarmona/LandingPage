@@ -1,32 +1,3 @@
-.header {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #262323;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid #ccc;
-}
-
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  max-width: 1200px;
-}
-
-.header-content h1 {
-  font-size: 4.5em;
-  color: #333;
-  -webkit-text-stroke: 3px white;
-}
-
-.header-content p {
-    font-size: 2.5em;
-    color: #FFF;
-}
-
 .navigation-buttons {
     position: sticky;
     top: 0;
@@ -35,39 +6,36 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 30px;
     margin: 0;
     padding: 10px 0;
     background-color: #262323;
 }
 
 /* From Uiverse.io by kamehame-ha */ 
-.button-ContactForm {
+.buttonNav {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 35px;
   padding: 10px 15px;
   gap: 15px;
-  background-color: #007ACC;
-  outline: 3px #007ACC solid;
-  outline-offset: -3px;
+  background-color: transparent;
   border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: 400ms;
+  text-decoration: underline white;
 }
 
-.button-ContactForm p {
+.buttonNav p {
   color: white;
   font-weight: 700;
   font-size: 1em;
-  transition: 400ms;
+  transition: 200ms;
 }
 
-.button-ContactForm:hover {
-  background-color: transparent;
-}
-
-.button:hover p {
+.buttonNav:hover p {
   color: #007ACC;
+  text-decoration: underline #007ACC;
 }

@@ -6,14 +6,14 @@ function Header() {
       {/* Header Navigation Buttons */}
       <nav className="navigation-buttons">
         {/* Contact Form Button */}
-        <button className="button-ContactForm">
-          <p className="descriptiontext-ContactForm">Contact Us</p>
+        <button className="buttonNav">
+          <p className="descriptiontextContact">Contact Us</p>
         </button>
-        <button className="button-ContactForm">
-          <p className="descriptiontext-ContactForm">Projects</p>
+        <button className="buttonNav">
+          <p className="descriptiontextProjects">Projects</p>
         </button>
-        <button className="button-ContactForm">
-          <p className="descriptiontext-ContactForm">
+        <button className="buttonNav">
+          <p className="descriptiontextLanguages">
             Languages and Technologies
           </p>
         </button>

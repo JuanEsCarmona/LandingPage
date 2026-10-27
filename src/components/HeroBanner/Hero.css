@@ -1,0 +1,47 @@
+.heroBanner {
+    width: 100svh;
+    height: 100svh;
+}
+
+.heroContent {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.heroTitle {
+    font-size: 50px;
+    cursor: default;
+}
+
+.heroCta {
+
+}
+
+.heroButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: 30px;
+  padding: 10px 15px;
+  gap: 15px;
+  background-color: #007ACC;
+  outline: 3px #007ACC solid;
+  outline-offset: -3px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.heroButton:hover {
+  color: white;
+  transform: scale(1.2);
+}
+
+.heroText {
+    
+}

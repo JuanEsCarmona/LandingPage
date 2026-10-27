@@ -4,6 +4,7 @@ import Header from "./components/header/Header.tsx";
 import Card from "./components/cardLanguages/Card.tsx";
 import CardProjects from "./components/cardProjects/CardProjects.tsx";
 import ContactForm from "./components/contactForm/ContactForm.tsx";
+import Hero from "./components/HeroBanner/Hero.tsx"
 
 /* LANDIGN PAGE */
 
@@ -14,6 +15,7 @@ function App() {
     <>
         <Header />
         <main className="App">
+          <Hero />
           <section className="cardLanguages">
             <Card />
           </section>
