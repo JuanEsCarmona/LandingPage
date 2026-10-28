@@ -21,7 +21,8 @@ body {
 }
 
 .App section {
-  padding: 30px;
+  padding: 0;
+  margin-bottom: 10px;
 }
 
 /* ESTILOS DE LAS SECCIONES */

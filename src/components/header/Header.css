@@ -25,7 +25,6 @@
   border: none;
   cursor: pointer;
   transition: 400ms;
-  text-decoration: underline white;
 }
 
 .buttonNav p {
@@ -37,5 +36,4 @@
 
 .buttonNav:hover p {
   color: #007ACC;
-  text-decoration: underline #007ACC;
 }

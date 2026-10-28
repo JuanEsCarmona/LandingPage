@@ -1,23 +1,43 @@
 .heroBanner {
-    width: 100svh;
-    height: 100svh;
+  width: 100%;
+  height: 100svh;
+  box-sizing: border-box;
+  --s: 200px; /* control the size */
+  --c1: #1d1d1d;
+  --c2: #4e4f51;
+  --c3: #3c3c3c;
+
+  background:
+    repeating-conic-gradient(from 30deg, #0000 0 120deg, var(--c3) 0 180deg)
+      calc(0.5 * var(--s)) calc(0.5 * var(--s) * 0.577),
+    repeating-conic-gradient(
+      from 30deg,
+      var(--c1) 0 60deg,
+      var(--c2) 0 120deg,
+      var(--c3) 0 180deg
+    );
+  background-size: var(--s) calc(var(--s) * 0.577);
 }
 
 .heroContent {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .heroTitle {
-    font-size: 50px;
-    cursor: default;
+  font-size: 50px;
+  color: white;
+  cursor: default;
 }
 
 .heroCta {
-
+  color: white;
 }
 
 .heroButton {
@@ -28,8 +48,9 @@
   height: 30px;
   padding: 10px 15px;
   gap: 15px;
-  background-color: #007ACC;
-  outline: 3px #007ACC solid;
+  background-color: #007acc;
+  color: white;
+  outline: 3px #007acc solid;
   outline-offset: -3px;
   border-radius: 5px;
   border: none;
@@ -43,5 +64,7 @@
 }
 
 .heroText {
-    
+  color: white;
+  font-size: 15px;
+  font-weight: 100;
 }

@@ -13,10 +13,10 @@ function Hero () {
                     Tus proyectos, en buenas manos
                 </h1>
                 <p className="heroCta">
-
+                    ¿Tienes una idea o necesitas renovar tu web? Te ayudo a convertirla en una experiencia digital clara y funcional.
                 </p>
                 <button className="heroButton">
-                    ¿Quieres verme ahora? ¡Contáctame!
+                    Hablemos de tu proyecto
                 </button>
                 <p className="heroText">
                     Estoy disponible siempre para atender tus solicitudes :D
