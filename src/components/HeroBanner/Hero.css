@@ -32,12 +32,12 @@
 
 .heroTitle {
   font-size: 50px;
-  color: white;
+  color: #F3F4F0;
   cursor: default;
 }
 
 .heroCta {
-  color: white;
+  color: #F3F4F0;
 }
 
 .heroButton {
@@ -49,7 +49,7 @@
   padding: 10px 15px;
   gap: 15px;
   background-color: #007acc;
-  color: white;
+  color: #F3F4F0;
   outline: 3px #007acc solid;
   outline-offset: -3px;
   border-radius: 5px;
@@ -59,12 +59,12 @@
 }
 
 .heroButton:hover {
-  color: white;
+  color: #F3F4F0;
   transform: scale(1.2);
 }
 
 .heroText {
-  color: white;
+  color: #F3F4F0;
   font-size: 15px;
   font-weight: 100;
 }
